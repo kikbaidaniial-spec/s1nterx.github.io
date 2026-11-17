@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alem English — английский для твоего будущего</title>
+<style>
+:root{--ink:#171a35;--muted:#68708a;--purple:#6547ed;--purple2:#8069ff;--lime:#dfff76;--bg:#f7f8fc;--line:#e8eaf2;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{text-decoration:none;color:inherit}.container{width:min(1180px,calc(100% - 64px));margin:auto}
+header{height:82px;background:#ffffffeb;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}
+.nav{display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;font-size:25px;letter-spacing:-1.5px}.brand span{color:var(--purple)}
+.navlinks{display:flex;gap:34px;color:#60677d;font-size:14px;font-weight:650}.navlinks a:hover{color:var(--purple)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--purple);color:white;padding:15px 22px;border-radius:12px;font-size:14px;font-weight:800;box-shadow:0 9px 22px #6547ed2b;transition:.2s;border:0;cursor:pointer}.btn:hover{background:#5234d7;transform:translateY(-2px)}.btn.light{background:white;color:var(--purple);box-shadow:none}.btn.small{padding:11px 17px}
+.hero{padding:76px 0 82px;background:radial-gradient(ellipse at 82% 25%,#e7e1ff 0,transparent 35%),linear-gradient(110deg,#f9f9ff,#f1efff)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid #ded7ff;background:#f0edff;color:#5639d3;padding:9px 13px;border-radius:30px;font-size:11px;font-weight:900;letter-spacing:1px}.pulse{width:7px;height:7px;border-radius:50%;background:#6b4cf4;box-shadow:0 0 0 4px #6b4cf422}
+h1{font-size:clamp(52px,5.7vw,76px);line-height:.99;letter-spacing:-4.8px;margin:24px 0 22px;max-width:650px}h1 em{font-style:normal;color:var(--purple)}
+.hero-copy{font-size:18px;line-height:1.7;color:var(--muted);max-width:570px}.hero-actions{display:flex;align-items:center;gap:20px;margin-top:30px}.underlink{font-size:13px;font-weight:800;color:#555d75}.underlink:hover{color:var(--purple)}
+.trust{display:flex;gap:28px;margin-top:38px;padding-top:24px;border-top:1px solid #e4e2f0}.trust strong{display:block;font-size:22px;letter-spacing:-1px}.trust small{color:var(--muted);font-size:11px}
+.hero-art{height:490px;position:relative;border-radius:30px;background:linear-gradient(145deg,#836dff,#4c2bd0);overflow:hidden;padding:32px;box-shadow:0 28px 65px #4e35c52b}
+.art-circle{position:absolute;width:390px;height:390px;border-radius:50%;background:var(--lime);right:-100px;top:-135px}.art-ring{position:absolute;width:280px;height:280px;border:1px solid #ffffff66;border-radius:50%;left:-115px;bottom:-90px}
+.lesson-card{position:absolute;background:white;border-radius:22px;padding:25px;box-shadow:0 20px 55px #29147a44}
+.lesson-card.main{width:295px;left:55px;top:76px;transform:rotate(-4deg)}.lesson-card.side{width:215px;right:28px;bottom:48px;transform:rotate(5deg);padding:19px}
+.card-label{font-size:10px;font-weight:950;letter-spacing:1.4px;color:var(--purple)}.lesson-card h2{font-size:34px;line-height:1.02;letter-spacing:-1.7px;margin:16px 0 12px}.lesson-card p{font-size:12px;color:var(--muted);line-height:1.6}.mini-pill{display:inline-block;background:var(--lime);padding:10px 13px;border-radius:9px;font-size:10px;font-weight:950;margin-top:8px}
+.avatar-row{display:flex;align-items:center;margin-top:16px}.avatar{width:31px;height:31px;border:2px solid white;border-radius:50%;background:#e9e4ff;margin-left:-7px;display:grid;place-items:center;font-size:12px}.avatar:first-child{margin-left:0}.avatar-caption{font-size:10px;color:var(--muted);margin-left:10px}
+.section{padding:88px 0}.section.white{background:white}.section-head{max-width:650px;margin-bottom:42px}.eyebrow{color:var(--purple);font-size:11px;font-weight:950;letter-spacing:1.5px}.section h2{font-size:42px;letter-spacing:-2px;line-height:1.08;margin:13px 0}.section-head p{font-size:16px;color:var(--muted);line-height:1.7;margin:12px 0 0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:27px;border:1px solid var(--line);background:white;border-radius:18px}.feature-icon{width:43px;height:43px;background:#f0edff;color:var(--purple);border-radius:12px;display:grid;place-items:center;font-size:20px}.feature h3{font-size:18px;margin:19px 0 9px}.feature p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+.program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.program{border:1px solid var(--line);border-radius:17px;padding:23px;background:#fff;min-height:210px}.program .level{font-size:10px;font-weight:950;color:var(--purple);letter-spacing:1px}.program h3{font-size:20px;margin:12px 0 8px}.program p{font-size:12px;color:var(--muted);line-height:1.6}.program small{display:inline-block;margin-top:12px;background:#f1efff;color:#5639d3;border-radius:7px;padding:7px 9px;font-size:10px;font-weight:800}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.step{border-top:2px solid #dcd6ff;padding-top:21px}.step-num{font-size:12px;font-weight:950;color:var(--purple)}.step h3{font-size:19px;margin:12px 0 8px}.step p{font-size:13px;color:var(--muted);line-height:1.7}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.info-panel{background:#211b52;color:white;border-radius:24px;padding:35px;position:relative;overflow:hidden}.info-panel:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:#745cff;opacity:.35;right:-80px;bottom:-120px}.info-panel h3{font-size:28px;letter-spacing:-1px;margin:0 0 12px;position:relative;z-index:1}.info-panel p{color:#c8c4e4;font-size:14px;line-height:1.7;position:relative;z-index:1}.checklist{list-style:none;padding:0;margin:24px 0 0;position:relative;z-index:1}.checklist li{padding:12px 0;border-top:1px solid #ffffff20;font-size:13px;color:#f1efff}.checklist li:before{content:"✓";color:var(--lime);font-weight:900;margin-right:12px}
+.testimonial{background:#f3f0ff;border-radius:20px;padding:28px}.quote{font-size:20px;line-height:1.5;letter-spacing:-.4px}.person{display:flex;align-items:center;gap:12px;margin-top:24px}.person-icon{width:42px;height:42px;border-radius:50%;background:#dcd5ff;display:grid;place-items:center;font-weight:900;color:#5237c9}.person b{font-size:13px}.person small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}.faq-list details{border-bottom:1px solid var(--line);padding:18px 0}.faq-list summary{font-size:15px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}.faq-list summary:after{content:"+";color:var(--purple);font-size:20px}.faq-list details[open] summary:after{content:"−"}.faq-list p{font-size:13px;line-height:1.7;color:var(--muted);max-width:650px}
+.lead-section{background:#211b52;color:white;padding:82px 0}.lead-grid{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:start}.lead-section h2{font-size:46px;letter-spacing:-2px;line-height:1.05;margin:13px 0}.lead-section .sub{color:#c8c4e4;line-height:1.7;font-size:15px;max-width:500px}.lead-bullets{display:flex;gap:22px;flex-wrap:wrap;margin-top:25px;color:#eeeaff;font-size:12px}.lead-bullets span:before{content:"✓";color:var(--lime);margin-right:7px;font-weight:900}
+.form-box{background:white;color:var(--ink);border-radius:20px;padding:30px}.form-box h3{font-size:23px;letter-spacing:-.8px;margin:0 0 7px}.form-box>p{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.field.full{grid-column:1/-1}.field label{display:block;font-size:11px;font-weight:850;margin:13px 0 7px}.field input,.field select{width:100%;border:1px solid #e1e4ed;border-radius:9px;padding:12px;font:inherit;font-size:13px;background:#fff;outline:none}.field input:focus,.field select:focus{border-color:var(--purple);box-shadow:0 0 0 3px #6547ed18}.form-box button{width:100%;margin-top:19px}.fineprint{font-size:10px;color:#9298aa;text-align:center;line-height:1.5;margin:12px 0 0}.success{display:none;background:#eff9df;color:#35550b;padding:13px;border-radius:10px;margin-top:13px;font-size:12px;font-weight:750}
+footer{background:#17143a;color:#aaa7c8;padding:30px 0;font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font-size:20px;font-weight:950;color:white}
+@media(max-width:900px){.container{width:min(100% - 40px,700px)}.navlinks{display:none}.hero-grid,.split,.lead-grid,.faq{grid-template-columns:1fr;gap:38px}.hero{padding:55px 0}.hero-art{height:410px}.features{grid-template-columns:repeat(2,1fr)}.program-grid{grid-template-columns:repeat(2,1fr)}.steps{gap:16px}.section{padding:65px 0}}
+@media(max-width:560px){.container{width:calc(100% - 32px)}header{height:68px}.nav .btn{padding:10px 12px;font-size:11px}.hero{padding:42px 0}.hero-grid{gap:30px}h1{font-size:49px;letter-spacing:-3px}.hero-copy{font-size:15px}.hero-actions{align-items:flex-start;flex-direction:column;gap:14px}.trust{gap:18px}.trust strong{font-size:18px}.hero-art{height:350px;padding:15px}.lesson-card.main{left:20px;top:45px;width:245px;padding:20px}.lesson-card.side{right:13px;bottom:25px;width:170px}.lesson-card h2{font-size:28px}.features,.program-grid,.steps{grid-template-columns:1fr}.section h2{font-size:34px}.section{padding:58px 0}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.lead-section h2{font-size:37px}.form-box{padding:22px}.footer-row{align-items:flex-start;flex-direction:column}}
+
+/* Motion and interactive widgets */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(-2deg)}}
+@keyframes glow{0%,100%{box-shadow:0 9px 22px #6547ed2b}50%{box-shadow:0 12px 34px #8069ff77}}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 4px #6b4cf422}50%{box-shadow:0 0 0 9px #6b4cf40a}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.hero .kicker{animation:fadeUp .7s both}.hero h1{animation:fadeUp .8s .08s both}.hero-copy{animation:fadeUp .8s .16s both}
+.hero-art .main{animation:floaty 6s ease-in-out infinite}.hero-art .side{animation:floaty 7s ease-in-out infinite reverse}
+.pulse{animation:pulseDot 2s infinite}
+.btn{position:relative;overflow:hidden;animation:glow 3s ease-in-out infinite}
+.btn:after{content:"";position:absolute;top:-80%;left:-35%;width:24%;height:260%;background:#ffffff55;transform:rotate(25deg);transition:left .55s}
+.btn:hover:after{left:125%}
+.btn:active{transform:scale(.97)}
+.utility-dock{position:fixed;right:22px;bottom:22px;z-index:10;display:flex;gap:10px;align-items:center}
+.utility-btn{border:1px solid #ffffff35;background:#211b52;color:white;border-radius:50px;padding:12px 16px;font-size:12px;font-weight:850;box-shadow:0 8px 25px #17143a30;cursor:pointer;display:flex;align-items:center;gap:8px}
+.utility-btn:hover{background:var(--purple);transform:translateY(-2px)}
+.timer-panel{position:fixed;right:22px;bottom:78px;z-index:10;background:white;border:1px solid var(--line);border-radius:16px;padding:18px;width:240px;box-shadow:0 18px 50px #17143a24;display:none}
+.timer-panel.open{display:block;animation:fadeUp .25s both}
+.timer-panel strong{font-size:13px}.timer-display{font-size:34px;font-weight:950;letter-spacing:-1.5px;margin:10px 0;color:var(--purple);font-variant-numeric:tabular-nums}
+.timer-actions{display:flex;gap:8px}.timer-actions button{flex:1;border:0;border-radius:8px;padding:9px;font-weight:800;cursor:pointer;background:#efedff;color:#5237c9}
+.timer-actions button.primary{background:var(--purple);color:white}
+.music-status{font-size:10px;color:var(--muted);margin-top:8px}
+.form-hint{font-size:10px;color:#9298aa;margin-top:6px}
+.criteria{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.criterion{padding:17px;border:1px solid var(--line);border-radius:13px;background:#fff;font-size:12px;color:var(--muted);line-height:1.5}
+.criterion b{display:block;color:var(--ink);font-size:13px;margin-bottom:5px}
+.sound-wave{display:flex;align-items:center;gap:3px;height:13px}
+.sound-wave i{display:block;width:3px;height:5px;border-radius:4px;background:var(--lime)}
+.sound-wave.playing i{animation:wave .7s ease-in-out infinite alternate}
+.sound-wave i:nth-child(2){animation-delay:.15s}.sound-wave i:nth-child(3){animation-delay:.3s}.sound-wave i:nth-child(4){animation-delay:.1s}
+@keyframes wave{to{height:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(max-width:560px){.utility-dock{right:12px;bottom:12px}.utility-btn{padding:11px 12px;font-size:11px}.timer-panel{right:12px;bottom:66px}.criteria{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#">alem<span>.</span></a>
+<nav class="navlinks"><a href="#about">О школе</a><a href="#program">Программа</a><a href="#how">Как проходит</a><a href="#faq">Вопросы</a></nav>
+<a class="btn small" href="#application">Записаться на пробный урок ↗</a>
+</div></header>
+
+<section class="hero"><div class="container hero-grid">
+<div>
+<div class="kicker"><span class="pulse"></span> НАБОР В НОВЫЕ ГРУППЫ ОТКРЫТ</div>
+<h1>Твой английский.<br>Твои <em>возможности.</em></h1>
+<p class="hero-copy">Практический английский для учёбы, путешествий и карьеры. Заговори увереннее с понятной программой, поддержкой преподавателя и занятиями в небольшой группе.</p>
+<div class="hero-actions"><a class="btn" href="#application">Получить бесплатный урок <span>→</span></a><a class="underlink" href="#program">Посмотреть программу ↓</a></div>
+<div class="trust">
+<div><strong>4–8</strong><small>человек в группе</small></div><div><strong>2×</strong><small>занятия в неделю</small></div><div><strong>60 мин</strong><small>одно занятие</small></div>
+</div>
+</div>
+<div class="hero-art"><div class="art-circle"></div><div class="art-ring"></div>
+<div class="lesson-card main"><div class="card-label">ALEM ENGLISH / YOUR START</div><h2>Speak with<br>confidence.</h2><p>Не просто учи правила — используй английский в реальной жизни.</p><div class="mini-pill">YOUR FIRST LESSON IS FREE</div></div>
+<div class="lesson-card side"><div class="card-label">YOUR PROGRESS</div><h3 style="font-size:20px;margin:12px 0 5px">Small steps.</h3><p>Регулярная практика помогает двигаться вперёд.</p><div class="avatar-row"><div class="avatar">A</div><div class="avatar">M</div><div class="avatar">D</div><div class="avatar-caption">Учимся вместе</div></div></div>
+</div>
+</div></section>
+
+<section class="section white" id="about"><div class="container">
+<div class="section-head"><div class="eyebrow">ПОЧЕМУ ALEM ENGLISH</div><h2>Обучение, которое<br>даёт реальный результат</h2><p>Мы делаем акцент на практике: ты постепенно расширяешь словарный запас, учишься понимать речь и применять знания в разговоре.</p></div>
+<div class="features">
+<div class="feature"><div class="feature-icon">✦</div><h3>Больше разговорной практики</h3><p>Диалоги, обсуждения и задания помогают преодолеть языковой барьер и говорить естественнее.</p></div>
+<div class="feature"><div class="feature-icon">◎</div><h3>План под твой уровень</h3><p>Перед стартом определим текущий уровень и подберём подходящую учебную группу.</p></div>
+<div class="feature"><div class="feature-icon">↗</div><h3>Понятный прогресс</h3><p>Регулярная обратная связь показывает, что уже получается и над чем стоит поработать.</p></div>
+<div class="feature"><div class="feature-icon">▤</div><h3>Материалы для занятий</h3><p>Получай задания и полезные материалы, чтобы закреплять темы между уроками.</p></div>
+<div class="feature"><div class="feature-icon">◷</div><h3>Удобное расписание</h3><p>Выбирай доступную группу и согласуй время занятий с координатором.</p></div>
+<div class="feature"><div class="feature-icon">♡</div><h3>Поддержка преподавателя</h3><p>Задавай вопросы, разбирай ошибки и получай рекомендации на каждом этапе.</p></div>
+</div></div></section>
+
+<section class="section" id="program"><div class="container">
+<div class="section-head"><div class="eyebrow">ПРОГРАММА</div><h2>Найдём твою стартовую точку</h2><p>Программа делится на уровни. После короткого определения уровня подскажем, с какой группы лучше начать.</p></div>
+<div class="program-grid">
+<div class="program"><div class="level">A1 · STARTER</div><h3>Beginner</h3><p>Базовые слова и фразы, знакомство, простые вопросы и повседневные ситуации.</p><small>Для начинающих</small></div>
+<div class="program"><div class="level">A2 · BASIC</div><h3>Elementary</h3><p>Общение на знакомые темы, описание событий и понимание простых текстов.</p><small>Уверенная база</small></div>
+<div class="program"><div class="level">B1 · INTERMEDIATE</div><h3>Intermediate</h3><p>Более свободные диалоги, выражение мнения и обсуждение разных тем.</p><small>Больше разговорной речи</small></div>
+<div class="program"><div class="level">B2 · UPPER</div><h3>Upper-Intermediate</h3><p>Сложные темы, аргументация, расширенная лексика и уверенная коммуникация.</p><small>Продвинутый уровень</small></div>
+</div></div></section>
+
+<section class="section white" id="how"><div class="container">
+<div class="section-head"><div class="eyebrow">ПРОСТО НАЧАТЬ</div><h2>Всего три шага до первого урока</h2><p>Оставь заявку — поможем разобраться с уровнем и подберём подходящий формат.</p></div>
+<div class="steps">
+<div class="step"><div class="step-num">01 / ЗАЯВКА</div><h3>Заполни форму</h3><p>Укажи имя, номер телефона и немного информации о своём уровне английского.</p></div>
+<div class="step"><div class="step-num">02 / КОНСУЛЬТАЦИЯ</div><h3>Обсуди детали</h3><p>Координатор свяжется с тобой, ответит на вопросы и поможет выбрать расписание.</p></div>
+<div class="step"><div class="step-num">03 / СТАРТ</div><h3>Попробуй занятие</h3><p>Познакомься с форматом урока и реши, подходит ли тебе обучение.</p></div>
+</div></div></section>
+
+
+<section class="section white" id="criteria"><div class="container">
+<div class="section-head reveal"><div class="eyebrow">ПРОЗРАЧНЫЕ УСЛОВИЯ</div><h2>Что важно перед стартом</h2><p>Несколько простых критериев помогут подобрать подходящую группу и сделать обучение комфортным.</p></div>
+<div class="criteria">
+<div class="criterion reveal"><b>Текущий уровень</b>Подберём группу после короткой оценки знаний — можно начинать с нуля.</div>
+<div class="criterion reveal"><b>Твоя цель</b>Учитываем, для чего нужен английский: общение, учёба, работа или поездки.</div>
+<div class="criterion reveal"><b>Расписание</b>Согласуем доступные дни и время до начала занятий.</div>
+</div>
+</div></section>
+
+<section class="section"><div class="container split">
+<div><div class="eyebrow">НАША ЦЕЛЬ</div><h2 style="font-size:40px;letter-spacing:-2px;line-height:1.08;margin:14px 0">Английский должен работать на твои цели</h2><p style="font-size:15px;line-height:1.8;color:var(--muted)">Хочешь свободнее общаться, подготовиться к учёбе или чувствовать себя увереннее в поездках? На старте обсудим твою цель и поможем выбрать подходящий уровень и темп.</p><a class="btn" href="#application">Обсудить свою цель →</a></div>
+<div class="info-panel"><h3>Что входит в обучение?</h3><p>Сбалансированная практика основных языковых навыков на каждом уровне.</p><ul class="checklist"><li>Speaking — разговорная практика</li><li>Listening — понимание речи на слух</li><li>Reading — работа с текстами</li><li>Grammar & Vocabulary — грамматика и лексика</li><li>Feedback — обратная связь по прогрессу</li></ul></div>
+</div></section>
+
+<section class="section white"><div class="container split">
+<div class="section-head" style="margin:0"><div class="eyebrow">ОТЗЫВ УЧЕНИКА</div><h2>Комфортная атмосфера помогает не бояться ошибок</h2><p>Главное — регулярно практиковаться и не останавливаться после первых сложностей.</p></div>
+<div class="testimonial"><div style="color:var(--purple);font-size:24px">★★★★★</div><div class="quote">«Мне понравилось, что на уроках мы не только разбираем правила, но и много разговариваем. Стало проще формулировать мысли на английском».</div><div class="person"><div class="person-icon">А</div><div><b>Алина</b><small>Ученица · отзыв-пример для макета</small></div></div></div>
+</div></section>
+
+<section class="section" id="faq"><div class="container faq">
+<div class="section-head"><div class="eyebrow">FAQ</div><h2>Частые вопросы</h2><p>Не нашёл ответ? Оставь заявку — мы поможем разобраться.</p></div>
+<div class="faq-list">
+<details><summary>Нужно ли знать английский до начала занятий?</summary><p>Нет. Можно начать с нуля. Перед распределением по группам мы уточним твой уровень.</p></details>
+<details><summary>Как проходит первый урок?</summary><p>Это знакомство с форматом обучения и преподавателем. Ты сможешь оценить подачу материала и задать вопросы.</p></details>
+<details><summary>Можно ли выбрать удобное время?</summary><p>Да, укажи предпочтительное время в заявке или обсуди его с координатором. Доступность зависит от расписания групп.</p></details>
+<details><summary>Сколько стоит обучение?</summary><p>Стоимость и доступные форматы можно уточнить у координатора после отправки заявки. На этой демонстрационной странице цены намеренно не указаны.</p></details>
+<details><summary>Где проходят занятия?</summary><p>Формат и место занятий уточняются при консультации. Можно добавить сюда реальные адреса или ссылку на онлайн-платформу.</p></details>
+</div></div></section>
+
+<section class="lead-section" id="application"><div class="container lead-grid">
+<div><div class="eyebrow" style="color:var(--lime)">ТВОЙ ПЕРВЫЙ ШАГ</div><h2>Запишись на бесплатный пробный урок</h2><p class="sub">Оставь контакты, и мы свяжемся с тобой, чтобы обсудить уровень, цели и удобное расписание.</p><div class="lead-bullets"><span>Без обязательств</span><span>Подбор уровня</span><span>Ответим на вопросы</span></div></div>
+<div class="form-box"><h3>Оставить заявку</h3><p>Заполни короткую форму — это займёт меньше минуты.</p>
+<form id="leadForm">
+<div style="position:absolute;left:-10000px" aria-hidden="true"><label for="website">Оставь это поле пустым</label><input id="website" name="_honey" tabindex="-1" autocomplete="off"></div>
+<div class="form-grid">
+<div class="field full"><label for="name">Имя и фамилия *</label><input id="name" name="name" placeholder="Например, Алихан Нурланов" required minlength="2"></div>
+<div class="field"><label for="phone">Номер телефона *</label><input id="phone" name="phone" type="tel" placeholder="+7 700 000 00 00" required pattern="[+0-9()\\s-]{10,}"><div class="form-hint">Укажи номер, по которому с тобой удобно связаться.</div></div>
+<div class="field"><label for="city">Город *</label><input id="city" name="city" placeholder="Астана" required></div>
+<div class="field"><label for="level">Твой уровень *</label><select id="level" name="level" required><option value="" selected disabled>Выбери уровень</option><option>Начинаю с нуля</option><option>Beginner / A1</option><option>Elementary / A2</option><option>Intermediate / B1</option><option>Upper-Intermediate / B2+</option><option>Не знаю свой уровень</option></select></div>
+<div class="field"><label for="goal">Твоя цель</label><select id="goal" name="goal"><option>Разговорный английский</option><option>Учёба и экзамены</option><option>Работа и карьера</option><option>Путешествия</option><option>Для себя</option></select></div>
+<div class="field full"><label for="time">Когда удобно заниматься?</label><select id="time" name="time"><option>Утром</option><option>Днём</option><option>Вечером</option><option>Гибкое расписание</option></select></div>
+</div><button class="btn" type="submit">Отправить заявку →</button><p class="fineprint">Нажимая кнопку, ты соглашаешься на обратную связь по указанным контактам.</p><div class="success" id="success" role="status" aria-live="polite"></div></form>
+</div></div></section>
+
+<div class="timer-panel" id="timerPanel" aria-live="polite">
+<strong>⏱ Фокус-таймер</strong>
+<div class="timer-display" id="timerDisplay">15:00</div>
+<div class="timer-actions"><button class="primary" id="timerStart">Старт</button><button id="timerReset">Сброс</button></div>
+<div class="music-status">15 минут на английский — начни с небольшого шага.</div>
+</div>
+<audio id="backgroundMusic" preload="auto" loop><source src="2hollis - crush (official visualizer).mp4" type="audio/mp4"></audio>
+<div class="utility-dock">
+<button class="utility-btn" id="musicToggle" type="button" aria-pressed="false"><span class="sound-wave" id="soundWave"><i></i><i></i><i></i><i></i></span><span id="musicLabel">♫ Музыка: выкл.</span></button>
+<button class="utility-btn" id="timerToggle" type="button">⏱ Таймер</button>
+</div>
+
+<footer><div class="container footer-row"><div class="footer-brand">alem<span style="color:var(--lime)">.</span></div><div>Демонстрационный сайт языковой школы · 2026</div><div>Английский для новых возможностей</div></div></footer>
+<script>
+// Reveal sections smoothly as they enter the viewport.
+const revealItems = document.querySelectorAll('.section-head,.feature,.program,.step,.info-panel,.testimonial,.faq-list,.criterion');
+revealItems.forEach(el => el.classList.add('reveal'));
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.12});
+  revealItems.forEach(el => observer.observe(el));
+} else revealItems.forEach(el => el.classList.add('visible'));
+
+// Play the selected track only after the visitor turns music on.
+const musicToggle = document.getElementById('musicToggle');
+const backgroundMusic = document.getElementById('backgroundMusic');
+const musicLabel = document.getElementById('musicLabel');
+const soundWave = document.getElementById('soundWave');
+let musicOn = false;
+function updateMusicControl() {
+  musicToggle.setAttribute('aria-pressed', String(musicOn));
+  musicLabel.textContent = musicOn ? '♫ Музыка: вкл.' : '♫ Музыка: выкл.';
+  soundWave.classList.toggle('playing', musicOn);
+}
+musicToggle.addEventListener('click', () => {
+  if (musicOn) {
+    musicOn = false;
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+    updateMusicControl();
+    return;
+  }
+  musicOn = true;
+  updateMusicControl();
+  backgroundMusic.play().catch(() => {
+    if (!musicOn) return;
+    musicOn = false;
+    updateMusicControl();
+    musicLabel.textContent = '♫ Музыка недоступна';
+  });
+});
+
+// A reusable 15-minute focus timer; no fake offer deadline.
+const timerPanel = document.getElementById('timerPanel');
+const timerDisplay = document.getElementById('timerDisplay');
+const timerStart = document.getElementById('timerStart');
+let remaining = 15 * 60, timerInterval = null;
+function renderTimer() {
+  const m = Math.floor(remaining / 60), s = remaining % 60;
+  timerDisplay.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+document.getElementById('timerToggle').addEventListener('click', () => timerPanel.classList.toggle('open'));
+timerStart.addEventListener('click', () => {
+  if (timerInterval) {
+    clearInterval(timerInterval); timerInterval = null; timerStart.textContent = 'Продолжить';
+  } else {
+    if (remaining <= 0) remaining = 15 * 60;
+    timerStart.textContent = 'Пауза';
+    timerInterval = setInterval(() => {
+      remaining--; renderTimer();
+      if (remaining <= 0) {
+        clearInterval(timerInterval); timerInterval = null;
+        timerStart.textContent = 'Начать снова';
+        timerDisplay.textContent = 'Готово!';
+      }
+    }, 1000);
+  }
+});
+document.getElementById('timerReset').addEventListener('click', () => {
+  clearInterval(timerInterval); timerInterval = null; remaining = 15 * 60;
+  timerStart.textContent = 'Старт'; renderTimer();
+});
+
+// Submit applications through a server-side Worker. The recipient email stays in a Worker secret.
+const FORM_ENDPOINT = 'https://REPLACE-WITH-CLOUDFLARE-WORKER-URL';
+const leadForm = document.getElementById('leadForm');
+const formStatus = document.getElementById('success');
+leadForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!leadForm.reportValidity()) return;
+  const submitButton = leadForm.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  const originalText = submitButton.textContent;
+  submitButton.textContent = 'Отправляем…';
+  formStatus.style.display = 'block';
+  formStatus.textContent = '';
+  try {
+    const values = Object.fromEntries(new FormData(leadForm).entries());
+    const response = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error('Submission failed');
+    leadForm.reset();
+    formStatus.textContent = 'Заявка отправлена! Мы свяжемся с тобой.';
+  } catch (error) {
+    formStatus.textContent = 'Не удалось отправить заявку. Попробуй ещё раз позже.';
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+  }
+});
+</script>
+</body></html>
