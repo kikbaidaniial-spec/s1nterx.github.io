@@ -261,7 +261,7 @@ document.getElementById('timerReset').addEventListener('click', () => {
 });
 
 // Submit applications through a server-side Worker. The recipient email stays in a Worker secret.
-const FORM_ENDPOINT = 'https://REPLACE-WITH-CLOUDFLARE-WORKER-URL';
+const FORM_ENDPOINT = 'https://alem-english-form.kikbaidaniial.workers.dev/';
 const leadForm = document.getElementById('leadForm');
 const formStatus = document.getElementById('success');
 leadForm.addEventListener('submit', async (event) => {
